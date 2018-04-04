@@ -1,0 +1,53 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{cvStyle}
+  [2011/01/11 v0.01 LaTeX package for my own purpose]
+
+\RequirePackage[hmargin=1.25cm, vmargin=1.5cm]{geometry} % Document margins
+\RequirePackage{marvosym} % Required for symbols in the colored box
+\RequirePackage{ifsym} % Required for symbols in the colored box
+\RequirePackage[usenames,dvipsnames]{xcolor} % Allows the definition of hex colors
+\RequirePackage{xcolor}
+\RequirePackage{sectsty}
+\RequirePackage{array}
+\RequirePackage{gensymb} % For \degree
+\RequirePackage{multicol}
+\RequirePackage{lipsum}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\RequirePackage{array, color}
+\RequirePackage{ragged2e}
+
+% Colors for links, text and headings
+\RequirePackage{hyperref}
+\definecolor{linkcolor}{HTML}{506266} % Blue-gray color for links
+\definecolor{shade}{HTML}{EBF0FF} % Peach color for the contact information box
+\definecolor{text1}{HTML}{2b2b2b} % Main document font color, off-black
+\definecolor{headings}{HTML}{2C7CDE} % Dark red color for headings
+\definecolor{subheadings}{HTML}{5F5F5F} % Dark red color for headings
+% Other color palettes: shade=B9D7D9 and linkcolor=A40000; shade=D4D7FE and linkcolor=FF0080 Headings: 701112
+\hypersetup{colorlinks,breaklinks, urlcolor=linkcolor, linkcolor=linkcolor} % S
+
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\RequirePackage{titlesec} % Allows creating custom \section's
+\titleformat{\section}{\color{headings} % Format of the section titles
+\scshape\Large\raggedright}{}{0em}{}[\color{black}\titlerule]
+\titleformat{\subsection}{\color{subheadings} % subsection titles
+\scshape\large\raggedleft}{}{0em}{}[\color{black}]
+\titleformat{\subsubsection}{\color{subheadings} % subsubsection titles
+\scshape\normalsize\raggedright}{}{0em}{}[\color{black}]
+
+% Define new heading font size
+\newcommand\hlarge{\fontsize{11}{10}}
+
+\titlespacing{\section}{0pt}{0pt}{5pt} % Spacing around titles
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\renewcommand{\labelitemi}{$\cdot$}
+\newcommand*\tabdash{\tabitem[-]}
+\newcommand*\dash{\item[-]}
+
+\endinput
